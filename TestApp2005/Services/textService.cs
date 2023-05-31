@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace TestApp2005.Services
 {
@@ -24,6 +26,47 @@ namespace TestApp2005.Services
         {
 
             return text;
+        }
+
+        public List<string> findThemeWordsRatio(String totalText, int wordCount)
+        {
+            string text = totalText;
+            int percantage = (int)wordCount / 10;
+            List<string> mostFrequentWords = GetMostFrequentWords(text, percantage);
+
+            //MessageBox.Show("Text: " + text);
+            //MessageBox.Show("Most Frequent Words: " + string.Join(", ", mostFrequentWords));
+            Console.ReadLine();
+            return mostFrequentWords;
+        }
+
+        static List<string> GetMostFrequentWords(string text, int wordCount)
+        {
+
+            string[] words = text.Split(new char[] { ' ', '.', ',', '!', '?' }, StringSplitOptions.RemoveEmptyEntries);
+
+            Dictionary<string, int> wordFrequencies = new Dictionary<string, int>();
+
+            foreach (string word in words)
+            {
+                string cleanedWord = word.ToLower().Trim();
+
+                if (wordFrequencies.ContainsKey(cleanedWord))
+                {
+                    wordFrequencies[cleanedWord]++;
+                }
+                else
+                {
+                    wordFrequencies[cleanedWord] = 1;
+                }
+            }
+
+            List<string> mostFrequentWords = wordFrequencies.OrderByDescending(x => x.Value)
+                                                          .Select(x => x.Key)
+                                                          .Take(wordCount)
+                                                          .ToList();
+
+            return mostFrequentWords;
         }
 
 
