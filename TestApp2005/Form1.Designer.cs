@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dökümanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.contentBox = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,10 +64,11 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dökümanToolStripMenuItem});
+            this.dökümanToolStripMenuItem,
+            this.toolStripTextBox2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1584, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1584, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -75,7 +77,7 @@
             this.dökümanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1});
             this.dökümanToolStripMenuItem.Name = "dökümanToolStripMenuItem";
-            this.dökümanToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.dökümanToolStripMenuItem.Size = new System.Drawing.Size(71, 23);
             this.dökümanToolStripMenuItem.Text = "Döküman";
             // 
             // toolStripTextBox1
@@ -86,6 +88,16 @@
             this.toolStripTextBox1.Text = "Döküman Seç";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
+            // toolStripTextBox2
+            // 
+            this.toolStripTextBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
+            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox2.Text = "Rogue Skoru";
+            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
+            // 
             // contentBox
             // 
             this.contentBox.BackColor = System.Drawing.SystemColors.Info;
@@ -95,6 +107,7 @@
             this.contentBox.Size = new System.Drawing.Size(194, 157);
             this.contentBox.TabIndex = 1;
             this.contentBox.Text = "";
+            this.contentBox.TextChanged += new System.EventHandler(this.contentBox_TextChanged);
             // 
             // label1
             // 
@@ -150,6 +163,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.Info;
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.Location = new System.Drawing.Point(39, 435);
             this.button2.Name = "button2";
@@ -238,10 +252,10 @@
             // simplifiedTextBox
             // 
             this.simplifiedTextBox.BackColor = System.Drawing.SystemColors.Info;
-            this.simplifiedTextBox.Location = new System.Drawing.Point(3, 15);
+            this.simplifiedTextBox.Location = new System.Drawing.Point(3, 18);
             this.simplifiedTextBox.Name = "simplifiedTextBox";
             this.simplifiedTextBox.ReadOnly = true;
-            this.simplifiedTextBox.Size = new System.Drawing.Size(326, 150);
+            this.simplifiedTextBox.Size = new System.Drawing.Size(327, 147);
             this.simplifiedTextBox.TabIndex = 14;
             this.simplifiedTextBox.Text = "";
             // 
@@ -317,6 +331,7 @@
         private System.Windows.Forms.RichTextBox simplifiedTextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
     }
 }
 

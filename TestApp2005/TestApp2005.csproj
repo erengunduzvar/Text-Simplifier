@@ -88,6 +88,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pyScripts\comparableSentence.cs" />
     <Compile Include="pyScripts\pyService.cs" />
     <Compile Include="Services\textService.cs" />
     <EmbeddedResource Include="Form1.resx">
